@@ -21,6 +21,7 @@
     "angular-cookies": "^1.5.8",
     "angular-route": "^1.5.8",
     "lodash": "^4.16.1",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "ngInfiniteScroll": "1.0.0"
   }
 }
