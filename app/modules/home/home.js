@@ -22,6 +22,7 @@
 
             self.switchView = switchView;
             self.HOME_TOGGLE_STATES = HOME_TOGGLE_STATES;
+            self.logout = AuthSrvc.logout;
 
             onInit();
 

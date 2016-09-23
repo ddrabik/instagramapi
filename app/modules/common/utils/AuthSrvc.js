@@ -3,12 +3,13 @@
 
     angular
         .module('mainApp.common.utils', [])
-        .factory('AuthSrvc', ['$window', AuthSrvc]);
+        .factory('AuthSrvc', ['$window', '$location', AuthSrvc]);
 
-    function AuthSrvc($window) {
+    function AuthSrvc($window, $location) {
         return {
             isLoggedIn: isLoggedIn,
-            getToken: getToken
+            getToken: getToken,
+            logout: logout
         };
 
         ////////////////
@@ -25,6 +26,15 @@
             }
 
             return token;
+        }
+
+        function logout() {
+            $window.localStorage.removeItem('token');
+            var body = angular.element('body');
+            var elem = angular.element('<img src="http://instagram.com/accounts/logout/" width="0" height="0" />');
+            angular.element(elem).appendTo(body);
+
+            $location.path('/login');
         }
 
     }
