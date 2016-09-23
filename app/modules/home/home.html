@@ -32,10 +32,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-
-            <media-grid media="ctrl.media" items-per-group="4" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.grid"></media-grid>
-            <media-list media="ctrl.media" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.list"></media-list>
+        <div class="col-sm-8 col-sm-offset-2" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.grid">
+            <media-grid media="ctrl.media" items-per-group="4"></media-grid>
+        </div>
+        <div class="col-sm-3 col-sm-offset-4" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.list">
+            <media-list media="ctrl.media"></media-list>
         </div>
     </div>
 </div>
