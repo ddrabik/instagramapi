@@ -5,7 +5,8 @@
         controller  : MediaCardCtrl,
         controllerAs: 'ctrl',
         bindings    : {
-            item: '<'
+            item: '<',
+            resolution: '@'
         }
     });
 
@@ -13,7 +14,19 @@
         var self = this;
 
         self.$onInit = function () {
-
+            switch(self.resolution) {
+                case 'low':
+                    self.src = self.item.images.low_resolution.url;
+                    break;
+                case 'thumb':
+                    self.src = self.item.images.thumbnail.url;
+                    break;
+                case 'high':
+                    self.src = self.item.images.standard_resolution.url;
+                    break;
+                default:
+                    self.src = self.item.images.low_resolution.url;
+            }
         };
     }
 
