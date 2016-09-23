@@ -1,5 +1,13 @@
 <div class="media-card">
-    <a ng-href="{{ctrl.item.link}}">
-        <img ng-src="{{ctrl.item.images.thumbnail.url}}" height="{{ctrl.item.images.thumbnail.height}}" width="{{ctrl.item.images.thumbnail.width}}"/>
-    </a>
+    <div class="media-card-image">
+        <a ng-href="{{ctrl.item.link}}">
+            <img ng-src="{{ctrl.item.images.thumbnail.url}}"/>
+        </a>
+    </div>
+    <div class="media-card-metadata">
+        <ul>
+            <li><i class="fa fa-heart" aria-hidden="true"></i> {{ctrl.item.likes.count}}</li>
+            <li><i class="fa fa-comment" aria-hidden="true"></i> {{ctrl.item.comments.count}}</li>
+        </ul>
+    </div>
 </div>

@@ -1,8 +1,4 @@
-#media-grid .media-grid-row {
-    margin-bottom: 20px;
-}
-
 #media-grid .media-grid-item {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }

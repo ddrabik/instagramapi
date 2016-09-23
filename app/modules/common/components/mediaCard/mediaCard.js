@@ -13,7 +13,9 @@
         var self = this;
 
         self.$onInit = function () {
-
+            self.styles = {
+                'background-image': 'url(' + self.item.images.low_resolution.url + ')'
+            }
         };
     }
 
