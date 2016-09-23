@@ -7,7 +7,8 @@ angular
         'mainApp.common.rest',
         'mainApp.common.utils',
         'mainApp.common.components',
-        'mainApp.home'
+        'mainApp.home',
+        'mainApp.login'
     ])
     .config(function ($routeProvider, $locationProvider) {
 
@@ -16,4 +17,14 @@ angular
         // For unmatched url
         $routeProvider.otherwise({redirectTo: '/'});
 
+    })
+
+    .run( function($rootScope, $location, AuthSrvc) {
+
+        // register listener to watch route changes
+        $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+            if (!AuthSrvc.isLoggedIn() && next.templateUrl != "/login.html") {
+                $location.path("/login");
+            }
+        });
     });
