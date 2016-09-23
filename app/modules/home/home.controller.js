@@ -19,16 +19,13 @@
             onInit();
 
             function onInit() {
-                self.loggedIn = AuthSrvc.isLoggedIn();
                 self.viewMode = HOME_TOGGLE_STATES.grid;
 
                 UserRestSrvc.getOwner().then(function (owner) {
-                    console.log(owner);
                     self.owner = owner;
                 });
 
                 MediaRestSrvc.getOwnerMedia().then(function (media) {
-                    console.log(media);
                     self.media = media;
                 });
             }
