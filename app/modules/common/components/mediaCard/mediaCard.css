@@ -4,14 +4,13 @@
 
 .media-card-image {
     cursor: pointer;
-
-    border-radius:3px;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .2);
 }
 
 .media-card-image img {
     width: 100%;
     height: auto;
+    border-radius: 3px;
 }
 
 .media-card-metadata {
@@ -23,6 +22,9 @@
     background: rgba(0, 0, 0, .7);
     position: absolute;
     bottom: 0;
+
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .media-card-metadata ul {
