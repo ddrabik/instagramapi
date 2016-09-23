@@ -1,15 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('mainApp.home', ['ngRoute'])
-
-        .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.when('/', {
-                templateUrl: 'modules/home/home.html',
-                controller: 'HomeCtrl',
-                controllerAs: 'ctrl'
-            });
-        }])
+    angular.module('mainApp.home')
 
         .constant('HOME_TOGGLE_STATES', {
             list: 'list',
