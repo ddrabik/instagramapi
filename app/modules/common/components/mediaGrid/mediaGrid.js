@@ -5,7 +5,8 @@
         controller  : MediaGridCtrl,
         controllerAs: 'ctrl',
         bindings    : {
-            media: '<'
+            media: '<',
+            itemsPerGroup: '@'
         }
     });
 
@@ -14,15 +15,16 @@
 
         self.$onInit = function () {
             if (self.media) {
-                self.mediaGroups = partition(self.media, 3);
+                self.mediaGroups = partition(self.media, self.itemsPerGroup);
             }
         };
 
 
         self.$onChanges = function (changesObj) {
             if (changesObj.media) {
-                self.mediaGroups = partition(self.media, 3);
+                self.mediaGroups = partition(self.media, self.itemsPerGroup);
             }
+
         };
 
         function partition(items, itemsPerGroup) {
