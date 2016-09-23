@@ -4,6 +4,9 @@ angular
     .module('mainApp', [
         'ngCookies',
         'ngRoute',
+        'mainApp.common.rest',
+        'mainApp.common.utils',
+        'mainApp.common.components',
         'mainApp.home'
     ])
     .config(function ($routeProvider, $locationProvider) {
@@ -12,4 +15,5 @@ angular
 
         // For unmatched url
         $routeProvider.otherwise({redirectTo: '/'});
+
     });

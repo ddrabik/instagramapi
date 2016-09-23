@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script>
+        if (!window.location.hash) {
+            redirect();
+        }
+
+        var responseMap = {};
+        var responseValues = window.location.hash.substr(1).split('&');
+
+        for (var i = 0; i < responseValues.length; i++) {
+            var splitValues = responseValues[i].split('=');
+            var key = splitValues[0];
+            var value = splitValues[1];
+
+            responseMap[key] = value;
+        }
+
+        if (responseMap.access_token) {
+            var auth = {
+                oauth: {
+                    access_token: responseMap.access_token
+                }
+            };
+
+            window.localStorage.setItem("token", JSON.stringify(auth));
+            redirect();
+        }
+
+        function redirect() {
+            window.location.href = "http://localhost:8000/"
+        }
+
+    </script>
+</head>
+<body>Redirecting...</body>
+</html>

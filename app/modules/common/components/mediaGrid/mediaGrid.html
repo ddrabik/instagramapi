@@ -1,0 +1,5 @@
+<div class="row" id="media-grid" ng-repeat="group in ctrl.mediaGroups track by $index">
+    <div class="col-xs-4 media-grid-row" ng-repeat="item in group track by $index">
+        <media-card item="item" class="media-grid-item"></media-card>
+    </div>
+</div>
