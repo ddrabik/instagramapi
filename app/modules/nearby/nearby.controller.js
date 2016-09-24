@@ -2,8 +2,8 @@
     'use strict';
 
     angular.module('mainApp.nearby')
-        .controller('NearbyCtrl', ['MediaRestSrvc', 'HOME_TOGGLE_STATES', 'UserLocationSrvc',
-            function (MediaRestSrvc, HOME_TOGGLE_STATES, UserLocationSrvc) {
+        .controller('NearbyCtrl', ['MediaRestSrvc', 'HOME_TOGGLE_STATES', 'UserLocationSrvc', '$routeParams', '$q',
+            function (MediaRestSrvc, HOME_TOGGLE_STATES, UserLocationSrvc, $routeParams, $q) {
                 var self = this;
 
                 self.switchView = switchView;
@@ -15,8 +15,18 @@
                     self.viewMode = HOME_TOGGLE_STATES.grid;
                     self.state = 'location';
 
-                    UserLocationSrvc.getLocation()
-                        .then(function (coords) {
+                    var locationPromise;
+
+                    if ($routeParams.latitude && $routeParams.longitude) {
+                        locationPromise = $q.when({
+                            latitude: $routeParams.latitude,
+                            longitude: $routeParams.longitude
+                        });
+                    } else {
+                        locationPromise = UserLocationSrvc.getLocation();
+                    }
+
+                    locationPromise.then(function (coords) {
                             self.state = 'media';
                             return MediaRestSrvc.getMediaByLocation(coords.latitude, coords.longitude);
                         }).then(function (media) {
