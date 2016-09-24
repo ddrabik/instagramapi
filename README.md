@@ -28,8 +28,8 @@ If the server starts on one different from 8000, the Oauth flow will not work. T
 
 If I were to continue working on this project, I would add the following features:
 
+1. Add animation between views
 1. Infinite scroll for grid and list views. More photos load as you scroll down the page.
 2. Show comments, likes, and time created on the detail view.
 3. Add sorting - one idea is to show a trending view using Likes-per-minute.
-4. View photos from a specific user.
 

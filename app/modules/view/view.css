@@ -3,7 +3,9 @@
 }
 
 .view-media .media-container {
-    width: 640px;
-    height: 640px;
     margin-bottom: 20px;
+}
+
+.view-media .media-container img {
+    max-width: 100%;
 }
