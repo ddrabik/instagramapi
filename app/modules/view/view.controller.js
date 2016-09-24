@@ -21,7 +21,7 @@
         }
 
         function goToLocation(location) {
-            $location.path('/view/location').search('latitude', location.latitude).search('longitude', location.longitude);
+            $location.path('/nearby').search('latitude', location.latitude).search('longitude', location.longitude);
         }
 
     }
