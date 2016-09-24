@@ -1,10 +1,12 @@
 <site-header display-states="false" ></site-header>
 
-<div class="container">
+<div class="container view-media">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-3">
-            <img ng-src="{{ctrl.media.images.standard_resolution.url}}">
-            <div ng-if="ctrl.media.location">
+            <div class="media-container">
+                <img ng-src="{{ctrl.media.images.standard_resolution.url}}">
+            </div>
+            <div ng-if="ctrl.media.location" class="media-location">
                 <a ng-click="ctrl.goToLocation(ctrl.media.location)">View more photos from {{ctrl.media.location.name}}</a>
             </div>
         </div>

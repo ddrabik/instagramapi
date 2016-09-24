@@ -1,0 +1,9 @@
+.view-media {
+    margin-bottom: 100px;
+}
+
+.view-media .media-container {
+    width: 640px;
+    height: 640px;
+    margin-bottom: 20px;
+}
