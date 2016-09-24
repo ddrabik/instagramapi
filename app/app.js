@@ -8,11 +8,12 @@ angular
         'mainApp.common.utils',
         'mainApp.common.components',
         'mainApp.home',
-        'mainApp.login'
+        'mainApp.login',
+        'mainApp.view'
     ])
     .config(function ($routeProvider, $locationProvider) {
 
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
 
         // For unmatched url
         $routeProvider.otherwise({redirectTo: '/'});
