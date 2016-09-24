@@ -9,7 +9,8 @@
 
         return {
             getOwnerMedia: getOwnerMedia,
-            getMediaById: getMediaById
+            getMediaById: getMediaById,
+            getMediaByLocation: getMediaByLocation
         };
 
         ////////////////
@@ -28,6 +29,22 @@
         function getMediaById(id) {
             var req = {
                 path: 'media/' + id,
+                method: 'GET'
+            };
+
+            return InstagramRestUtils.sendRequest(req).then(function (response) {
+                return response.data;
+            });
+        }
+
+        function getMediaByLocation(latitude, longitude) {
+            var req = {
+                path: 'media/search',
+                params: {
+                    lat: latitude,
+                    lng: longitude,
+                    distance: 5000
+                },
                 method: 'GET'
             };
 

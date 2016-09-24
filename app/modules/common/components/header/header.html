@@ -2,27 +2,42 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <div class="pull-left" ng-if="ctrl.displayStates === 'true'">
-                    <div class="btn-group">
-                        <button class="btn btn-default"
-                                ng-class="{'active': ctrl.currentState === ctrl.HOME_TOGGLE_STATES.grid}"
-                                ng-click="ctrl.onStateChange({'state': ctrl.HOME_TOGGLE_STATES.grid})"
-                        >
-                            <i class="fa fa-th"></i>
-                        </button>
-                        <button class="btn btn-default"
-                                ng-class="{'active': ctrl.currentState === ctrl.HOME_TOGGLE_STATES.list}"
-                                ng-click="ctrl.onStateChange({'state': ctrl.HOME_TOGGLE_STATES.list})"
-                        >
-                            <i class="fa fa-list"></i>
-                        </button>
+                <div class="pull-left text-left">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#/">Home</a>
+                            </li>
+                            <li>
+                                <a href="#/nearby">Nearby</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div ng-if="ctrl.displayStates === 'true'">
+                        <div class="btn-group">
+                            <button class="btn btn-default"
+                                    ng-class="{'active': ctrl.currentState === ctrl.HOME_TOGGLE_STATES.grid}"
+                                    ng-click="ctrl.onStateChange({'state': ctrl.HOME_TOGGLE_STATES.grid})"
+                            >
+                                <i class="fa fa-th"></i>
+                            </button>
+                            <button class="btn btn-default"
+                                    ng-class="{'active': ctrl.currentState === ctrl.HOME_TOGGLE_STATES.list}"
+                                    ng-click="ctrl.onStateChange({'state': ctrl.HOME_TOGGLE_STATES.list})"
+                            >
+                                <i class="fa fa-list"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="pull-right">
                     <p>
-                        Welcome {{ctrl.owner.full_name}}
+                        Welcome {{ctrl.owner.full_name}} <br />
                     </p>
+
                     <a ng-click="ctrl.logout()">Logout</a>
+
                 </div>
 
             </div>

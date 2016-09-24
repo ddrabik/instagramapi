@@ -16,7 +16,6 @@
 
         function activate() {
             MediaRestSrvc.getMediaById($routeParams.id).then(function (media) {
-                console.log(media);
                 self.media = media;
             });
         }

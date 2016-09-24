@@ -7,3 +7,17 @@
     border-bottom: 1px solid #d4d7dc;
     padding-bottom: 20px;
 }
+
+.navbar nav {
+    margin-bottom: 10px;
+}
+
+.navbar nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 10px;
+    display: inline-block;
+}

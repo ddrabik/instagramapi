@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('mainApp.common.utils', [])
+        .module('mainApp.common.utils')
         .factory('AuthSrvc', ['$window', '$location', AuthSrvc]);
 
     function AuthSrvc($window, $location) {

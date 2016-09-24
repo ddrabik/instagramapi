@@ -9,7 +9,8 @@ angular
         'mainApp.common.components',
         'mainApp.home',
         'mainApp.login',
-        'mainApp.view'
+        'mainApp.view',
+        'mainApp.nearby'
     ])
     .config(function ($routeProvider, $locationProvider) {
 

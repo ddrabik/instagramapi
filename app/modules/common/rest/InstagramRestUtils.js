@@ -21,18 +21,26 @@
                 return $q.reject(new Error('error.user.unauthenticated'));
             }
 
-            var url = api + reqData.path + "?" + $httpParamSerializer({
+            var params = _.extend(reqData.params, {
                 access_token: token.oauth.access_token,
                 callback: 'JSON_CALLBACK'
             });
 
-            return $http.jsonp(url).then(function (response) {
-                console.log(response);
-                return response.data;
-            }).catch(function (error) {
-                console.error(error.data);
-                return $q.reject(error.data);
-            });
+            var url = api + reqData.path + "?" + $httpParamSerializer(params);
+
+            return $http.jsonp(url)
+                .catch(function (error) {
+                    console.error(error.data);
+                    return $q.reject(error.data);
+                })
+                .then(function (response) {
+                    console.debug(response.data);
+
+                    if (response.data.meta.code >= 400) {
+                        return $q.reject(response.data.meta['error_message']);
+                    }
+                    return response.data;
+                });
         }
 
     }

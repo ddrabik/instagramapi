@@ -1,0 +1,22 @@
+<site-header current-state="ctrl.viewMode" on-state-change="ctrl.switchView(state)" display-states="true"></site-header>
+<div class="container">
+    <div class="row" ng-if="ctrl.state">
+        <div class="col-sm-8 col-sm-offset-2">
+            <p ng-if="ctrl.state === 'location'"><i class="fa fa-spin fa-spinner"></i> Retrieving location&hellip;</p>
+            <p ng-if="ctrl.state === 'media'"><i class="fa fa-spin fa-spinner"></i> Finding nearby media&hellip;</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.grid">
+            <media-grid media="ctrl.media" items-per-group="4"></media-grid>
+        </div>
+        <div class="col-sm-6 col-sm-offset-3" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.list">
+            <media-list media="ctrl.media"></media-list>
+        </div>
+    </div>
+
+    <div ng-if="!ctrl.state && !ctrl.media.length">
+        No one has posted anything near you
+    </div>
+</div>
