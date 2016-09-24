@@ -1,35 +1,4 @@
-<nav class="navbar">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div class="pull-left">
-                    <div class="btn-group">
-                        <button class="btn btn-default"
-                                ng-class="{'active': ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.grid}"
-                                ng-click="ctrl.switchView(ctrl.HOME_TOGGLE_STATES.grid)"
-                        >
-                            <i class="fa fa-th"></i>
-                        </button>
-                        <button class="btn btn-default"
-                                ng-class="{'active': ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.list}"
-                                ng-click="ctrl.switchView(ctrl.HOME_TOGGLE_STATES.list)"
-                        >
-                            <i class="fa fa-list"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="pull-right">
-                    <p>
-                        Welcome {{ctrl.owner.full_name}}
-                    </p>
-                    <a ng-click="ctrl.logout()">Logout</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</nav>
-
+<site-header current-state="ctrl.viewMode" on-state-change="ctrl.switchView(state)" display-states="true"></site-header>
 <div class="container">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2" ng-if="ctrl.viewMode === ctrl.HOME_TOGGLE_STATES.grid">
